@@ -1,0 +1,117 @@
+th,
+td {
+  height: 250px;
+  text-align: center;
+  padding: 10px;
+}
+
+table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+body {
+  background-color: bisque;
+  width: 100%;
+}
+
+main {
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.navbar {
+  background-color: darkgoldenrod;
+}
+
+table {
+  width: 100%;
+}
+
+#MyModification {
+  position: fixed;
+  width: 100%;
+  margin-top: -2.5em;
+  z-index: 7;
+  padding-left: 10px;
+}
+
+/*Mettre les images selon la taille de l'écran */
+@media screen and (min-width: 10px) and (max-width: 750px) {
+  img {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 751px) and (max-width: 40000px) {
+  img {
+    height: 300px;
+  }
+}
+
+.buttonConnexion {
+  color: white;
+  background-color: #11ffee00;
+  border: 0 solid black;
+  padding: 5px 0;
+}
+
+.containerFlexible {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.elementFlexible {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.myButton {
+  background-color: Transparent;
+  border: none;
+  width: 100%;
+}
+
+.clignote {
+  color: hsl(324, 70%, 45%);
+  animation: wheelHueColor 3s linear infinite;
+}
+
+@keyframes wheelHueColor {
+  from,
+  to {
+    color: hsl(324, 70%, 45%);
+  }
+  10% {
+    color: hsl(360, 65%, 45%);
+  }
+  20% {
+    color: hsl(36, 80%, 45%);
+  }
+  30% {
+    color: hsl(72, 75%, 35%);
+  }
+  40% {
+    color: hsl(108, 65%, 35%);
+  }
+  50% {
+    color: hsl(144, 75%, 35%);
+  }
+  60% {
+    color: hsl(180, 75%, 35%);
+  }
+  70% {
+    color: hsl(216, 60%, 45%);
+  }
+  80% {
+    color: hsl(252, 65%, 50%);
+  }
+  90% {
+    color: hsl(288, 60%, 40%);
+  }
+}
