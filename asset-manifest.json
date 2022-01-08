@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Famille-Rolin/static/css/main.2aca3385.chunk.css",
+    "main.js": "/Famille-Rolin/static/js/main.9ac7ca91.chunk.js",
+    "main.js.map": "/Famille-Rolin/static/js/main.9ac7ca91.chunk.js.map",
+    "runtime-main.js": "/Famille-Rolin/static/js/runtime-main.b177d8c2.js",
+    "runtime-main.js.map": "/Famille-Rolin/static/js/runtime-main.b177d8c2.js.map",
+    "static/js/2.eee9ab04.chunk.js": "/Famille-Rolin/static/js/2.eee9ab04.chunk.js",
+    "static/js/2.eee9ab04.chunk.js.map": "/Famille-Rolin/static/js/2.eee9ab04.chunk.js.map",
+    "static/js/3.5cbd8291.chunk.js": "/Famille-Rolin/static/js/3.5cbd8291.chunk.js",
+    "static/js/3.5cbd8291.chunk.js.map": "/Famille-Rolin/static/js/3.5cbd8291.chunk.js.map",
+    "index.html": "/Famille-Rolin/index.html",
+    "static/css/main.2aca3385.chunk.css.map": "/Famille-Rolin/static/css/main.2aca3385.chunk.css.map",
+    "static/js/2.eee9ab04.chunk.js.LICENSE.txt": "/Famille-Rolin/static/js/2.eee9ab04.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b177d8c2.js",
+    "static/js/2.eee9ab04.chunk.js",
+    "static/css/main.2aca3385.chunk.css",
+    "static/js/main.9ac7ca91.chunk.js"
+  ]
+}
