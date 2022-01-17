@@ -7,6 +7,7 @@ import AnniversairePage from "./Pages/anniversaire";
 import Generation3 from "./Pages/generation3";
 import Generation4 from "./Pages/generation4";
 import Jeu from "./Pages/jeu";
+import Creer from "./Pages/Users";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <NavBar />
           <main>
             <Switch>
+              <Route path="/creer" component={Creer} />
               <Route path="/:generation/:numberFamilly" component={HomePage} />
               <Route path="/generation4" component={Generation4} />
               <Route path="/generation3" component={Generation3} />

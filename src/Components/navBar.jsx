@@ -26,11 +26,14 @@ const NavBar = () => {
                         <li className="nav-item">
                             <NavLink className="navbar-brand" to="/jeu">Jeu</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="navbar-brand" to="/creer">créer</NavLink>
+                        </li>
                     </ul>
-                    <button
+                    {/*<button
                         className="buttonConnexion navbar-brand text-right" onClick = {() => {Firebase.signInWithGoogle()}}>
                         Connexion
-                    </button>
+                    </button>*/}
                 </div>
             </nav>
         </>

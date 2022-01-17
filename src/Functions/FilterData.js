@@ -22,6 +22,16 @@ export const MyFilter = (numberFamilly, generation) => {
   return filteredData;
 };
 
+export const FindOnePerson = (numberFamilly) => {
+  var filteredData = [];
+  allData
+    .filter((person) => person.numberFamilly === numberFamilly)
+    .map((person) => {
+      return filteredData.push(person);
+    });
+  return filteredData[0];
+};
+
 export const DataInOptions = () => {
   var options = [];
   allData
