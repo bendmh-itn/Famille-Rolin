@@ -78,7 +78,6 @@ export const MoisPersons = () => {
     now.getMonth() + 1 < 10
       ? "0" + (now.getMonth() + 1).toString()
       : (now.getMonth() + 1).toString();
-  console.log(moisAnnee);
   allData.forEach((element) => {
     if (element.birthDate.split("/")[1] === moisAnnee) {
       data.push(element);

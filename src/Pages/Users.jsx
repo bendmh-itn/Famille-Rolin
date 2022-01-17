@@ -11,11 +11,12 @@ const Users = () => {
     const [numberFamilly, setNumberFamilly] = useState(0);
     const [generation, setGeneration] = useState("");
     const [famillyName, setFamillyName] = useState("");
-    const [picture, setPicture] = useState(null);
-    const [password, setPassword] = useState("FamilleRolin");
+    const [picture, setPicture] = useState("");
+    const [password, setPassword] = useState("");
     const [options, setOptions] = useState([]);
     const [message, setMessage] = useState("");
     const [create, setCreate] = useState(true);
+    const [pictureChanged, setPictureChanged] = useState(false);
     const [id, setId] = useState("");
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const Users = () => {
     }, []);
 
     function CreateUser() {
-        if(picture === null || picture === undefined){
+        if(picture === ""){
             fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, "", famillyName).then(() => {
                 setMessage("Document successfully written!");
                 RefreshField();
@@ -48,10 +49,10 @@ const Users = () => {
                             fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName).then(() => {
                                 setMessage("Document successfully written!");
                                 RefreshField();
-                              })
-                              .catch((error) => {
+                                })
+                                .catch((error) => {
                                 setMessage("Error writing document: " + error);
-                              });
+                                });
                         });
                 }
             )
@@ -93,8 +94,8 @@ const Users = () => {
     }
 
     function ModifyUser() {
-        if(picture === null || picture === undefined){
-            fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, "", famillyName).then(() => {
+        if(!pictureChanged){
+            fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, picture, famillyName).then(() => {
                 setMessage("Document successfully written!");
                 RefreshField();
               })
@@ -118,18 +119,20 @@ const Users = () => {
                             fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName).then(() => {
                                 setMessage("Document successfully written!");
                                 RefreshField();
-                              })
-                              .catch((error) => {
+                                })
+                                .catch((error) => {
                                 setMessage("Error writing document: " + error);
-                              });
+                                });
                         });
                 }
             )
         }
+        
     } 
 
     const onChangePicture = e => {
         setPicture(e.target.files[0]);
+        setPictureChanged(true);
     };
 
     return (
