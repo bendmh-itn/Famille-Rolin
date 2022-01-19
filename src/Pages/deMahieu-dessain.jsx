@@ -67,6 +67,7 @@ const Family = ({match}) => {
 						dateDeces={person.deathDate}
 						link="#"
 						generation={person.generation}
+						numberFamilly={person.numberFamilly} 
 					/>
 					}
 				
@@ -84,7 +85,8 @@ const Family = ({match}) => {
 						dateDeNaissance= {person.birthDate}
 						dateDeces={person.deathDate}
 						link={person.generation === ACTUAL_GENERATION || person.generation === "1" ? "#" :  "/" + person.generation + "/" + person.numberFamilly }
-						generation={person.generation}   
+						generation={person.generation} 
+						numberFamilly={person.numberFamilly}  
 					/>
 				}
 			)}

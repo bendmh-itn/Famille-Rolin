@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import '../App.css';
 
-const TrombinoscopeFlex = ({lienImage, prenomNom, dateDeNaissance, link="#", dateDeces, generation, myBirthday = false}) => {
+const TrombinoscopeFlex = ({lienImage, prenomNom, dateDeNaissance, link="#", dateDeces, generation, myBirthday = false, numberFamilly}) => {
     const history = useHistory();
     return ( 
         <>
@@ -15,6 +15,7 @@ const TrombinoscopeFlex = ({lienImage, prenomNom, dateDeNaissance, link="#", dat
                 }
                 <div>
                     <h5>{prenomNom}</h5>
+                    <p>{numberFamilly}</p>
                     <h6>{dateDeNaissance} 
                     {dateDeces &&
                         <span> - {dateDeces}</span> 

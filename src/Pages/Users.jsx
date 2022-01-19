@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import fireBase from '../firebase';
 import { storage } from '../firebase';
-import { DataInOptions, FindOnePerson } from '../Functions/FilterData';
+import { AllDataInOptions, FindOnePerson } from '../Functions/FilterData';
 import SelectPerson from '../Components/selectModifyPerson';
 
 const Users = () => {
@@ -20,7 +20,7 @@ const Users = () => {
     const [id, setId] = useState("");
 
     useEffect(() => {
-        setOptions(DataInOptions());
+        setOptions(AllDataInOptions());
     }, []);
 
     function CreateUser() {
@@ -140,6 +140,7 @@ const Users = () => {
             {password !== "FamilleRolin" &&
             <div>
                 <div>
+                    <p>Merci de ne pas toucher à ça. Éviter de tout casser</p>
                     <input type="password" placeholder='le mot de passe' onChange={e => setPassword(e.target.value)}/>
                 </div>
             </div>
