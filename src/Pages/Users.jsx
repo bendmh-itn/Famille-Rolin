@@ -26,7 +26,7 @@ const Users = () => {
     function CreateUser() {
         if(picture === ""){
             fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, "", famillyName).then(() => {
-                setMessage("Document successfully written!");
+                setMessage(firstName + " " + lastName + " a bien été enregistré");
                 RefreshField();
               })
               .catch((error) => {
@@ -47,7 +47,7 @@ const Users = () => {
                         .getDownloadURL()
                         .then(pictureName => {
                             fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName).then(() => {
-                                setMessage("Document successfully written!");
+                                setMessage(firstName + " " + lastName + " a bien été enregistré");
                                 RefreshField();
                                 })
                                 .catch((error) => {
@@ -96,7 +96,7 @@ const Users = () => {
     function ModifyUser() {
         if(!pictureChanged){
             fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, picture, famillyName).then(() => {
-                setMessage("Document successfully written!");
+                setMessage(firstName + " " + lastName + " a bien été modifié");
                 RefreshField();
               })
               .catch((error) => {
@@ -117,7 +117,7 @@ const Users = () => {
                         .getDownloadURL()
                         .then(pictureName => {
                             fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName).then(() => {
-                                setMessage("Document successfully written!");
+                                setMessage(firstName + " " + lastName + " a bien été modifié");
                                 RefreshField();
                                 })
                                 .catch((error) => {
