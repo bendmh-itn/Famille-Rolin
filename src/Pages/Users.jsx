@@ -140,7 +140,7 @@ const Users = () => {
             {password !== "FamilleRolin" &&
             <div>
                 <div>
-                    <p>Merci de ne pas toucher à ça. Éviter de tout casser</p>
+                    <p>Merci de ne pas toucher à ça. Évite de tout casser</p>
                     <input type="password" placeholder='le mot de passe' onChange={e => setPassword(e.target.value)}/>
                 </div>
             </div>
