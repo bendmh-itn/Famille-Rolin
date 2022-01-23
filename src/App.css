@@ -82,6 +82,12 @@ table {
   animation: wheelHueColor 3s linear infinite;
 }
 
+.goBack {
+  color: whitesmoke;
+  position: fixed;
+  bottom: 10px;
+}
+
 @keyframes wheelHueColor {
   from,
   to {

@@ -50,7 +50,8 @@ function CreateUserFireBase(
   numberFamilly,
   generation,
   pictureName,
-  famillyName
+  famillyName,
+  dateMariage
 ) {
   let id = generateUniqueFirestoreId();
   return db.collection("famille").doc(id).set({
@@ -61,6 +62,7 @@ function CreateUserFireBase(
     numberFamilly: numberFamilly,
     pictureName: pictureName,
     famillyName: famillyName,
+    dateMariage: dateMariage,
   });
 }
 
@@ -72,7 +74,8 @@ function ModifyUserFireBase(
   numberFamilly,
   generation,
   pictureName,
-  famillyName
+  famillyName,
+  dateMariage
 ) {
   return db.collection("famille").doc(id).set({
     firstName: firstName,
@@ -82,6 +85,7 @@ function ModifyUserFireBase(
     numberFamilly: numberFamilly,
     pictureName: pictureName,
     famillyName: famillyName,
+    dateMariage: dateMariage
   });
 }
 

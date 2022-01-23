@@ -12,12 +12,13 @@ const Users = () => {
     const [generation, setGeneration] = useState("");
     const [famillyName, setFamillyName] = useState("");
     const [picture, setPicture] = useState("");
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState("FamilleRolin");
     const [options, setOptions] = useState([]);
     const [message, setMessage] = useState("");
     const [create, setCreate] = useState(true);
     const [pictureChanged, setPictureChanged] = useState(false);
     const [id, setId] = useState("");
+    const [dateMariage, setDateMariage] = useState("");
 
     useEffect(() => {
         setOptions(AllDataInOptions());
@@ -25,7 +26,7 @@ const Users = () => {
 
     function CreateUser() {
         if(picture === ""){
-            fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, "", famillyName).then(() => {
+            fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, "", famillyName, dateMariage).then(() => {
                 setMessage(firstName + " " + lastName + " a bien été enregistré");
                 RefreshField();
               })
@@ -46,7 +47,7 @@ const Users = () => {
                         .child(picture.name)
                         .getDownloadURL()
                         .then(pictureName => {
-                            fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName).then(() => {
+                            fireBase.CreateUserFireBase(lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName, dateMariage).then(() => {
                                 setMessage(firstName + " " + lastName + " a bien été enregistré");
                                 RefreshField();
                                 })
@@ -75,6 +76,7 @@ const Users = () => {
                 setCreate(false);
                 setFamillyName(person.famillyName);
                 setPicture(person.pictureName);
+                setDateMariage(person.dateMariage);
 			});
         }else{
             RefreshField();
@@ -90,12 +92,12 @@ const Users = () => {
         setBirthDate("");
         setFamillyName("");
         setCreate(true);
-        setFamillyName("");
+        setDateMariage("");
     }
 
     function ModifyUser() {
         if(!pictureChanged){
-            fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, picture, famillyName).then(() => {
+            fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, picture, famillyName, dateMariage).then(() => {
                 setMessage(firstName + " " + lastName + " a bien été modifié");
                 RefreshField();
               })
@@ -116,7 +118,7 @@ const Users = () => {
                         .child(picture.name)
                         .getDownloadURL()
                         .then(pictureName => {
-                            fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName).then(() => {
+                            fireBase.ModifyUserFireBase(id, lastName, firstName, birthDate, numberFamilly, generation, pictureName, famillyName, dateMariage).then(() => {
                                 setMessage(firstName + " " + lastName + " a bien été modifié");
                                 RefreshField();
                                 })
@@ -155,6 +157,10 @@ const Users = () => {
                 <div className="form-group">
                     <label>Nom de famille (souvent nom mari - épouse)</label>
                     <input className="form-control" value={famillyName} placeholder="Nom de famille..." onChange={e => setFamillyName(e.target.value)}/>
+                </div>
+                <div className="form-group">
+                    <label>Date de mariage</label>
+                    <input className="form-control" value={dateMariage} placeholder="Date de mariage" onChange={e => setDateMariage(e.target.value)}/>
                 </div>
                 <div className="form-group">
                     <label>Nom</label>

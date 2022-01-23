@@ -3,13 +3,15 @@ import TrombinoscopeFlex from '../Components/trombinoscopeFlex';
 import fireBase from '../firebase';
 import { MyFilter, DataInOptions, copyData } from '../Functions/FilterData';
 import SelectPerson from '../Components/selectPerson';
-import {ACTUAL_GENERATION} from "../constant"
+import {ACTUAL_GENERATION} from "../constant";
+import { useHistory } from "react-router-dom";
 
 
 const Family = ({match}) => {
 	const [famillyFiltred, setFamillyFiltred] = useState([]);
 	const [generation, setGeneration] = useState("");
 	const [options, setOptions] = useState([]);
+	const history = useHistory();
 	
     useEffect(() => {
 		if(options.length === 0){
@@ -52,8 +54,20 @@ const Family = ({match}) => {
 				data={options}
 			/>
 			{famillyFiltred[0] !== undefined && 
-				<h1>{famillyFiltred[0].famillyName}</h1>
+					<div>
+						<h1 className='mb-0'>{famillyFiltred[0].famillyName}</h1>
+						{
+							famillyFiltred[0].dateMariage !== undefined &&
+							<h4 className='text-center'>{famillyFiltred[0].dateMariage}</h4>
+						}
+						{
+							famillyFiltred[0].dateMariage === undefined &&
+							<p></p>
+						}
+					</div>
+					
 			}
+			<button type="button" className="btn btn-info goBack" onClick={() => history.goBack()}>Go back</button>
 			<div className="containerFlexible">
 			{
 				famillyFiltred
@@ -66,7 +80,7 @@ const Family = ({match}) => {
 						dateDeNaissance= {person.birthDate}
 						dateDeces={person.deathDate}
 						link="#"
-						generation={person.generation} 
+						generation={person.generation}
 					/>
 					}
 				
