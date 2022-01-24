@@ -12,7 +12,7 @@ const Users = () => {
     const [generation, setGeneration] = useState("");
     const [famillyName, setFamillyName] = useState("");
     const [picture, setPicture] = useState("");
-    const [password, setPassword] = useState("FamilleRolin");
+    const [password, setPassword] = useState("");
     const [options, setOptions] = useState([]);
     const [message, setMessage] = useState("");
     const [create, setCreate] = useState(true);
